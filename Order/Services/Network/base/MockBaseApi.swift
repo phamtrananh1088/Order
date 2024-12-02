@@ -40,7 +40,7 @@ class MockBaseApi: BaseApi {
         return r.map { data in
             if endpoint == OfflineSyncApi.endpoint.noticeData.rawValue, let d = data as? NoticeResult, d.notices.isEmpty {
                 let c = Config.clientInfo.terminalId
-                let r: [NoticeModel] = [NoticeModel(recordId: "a1", grdRecordId: "b1", eventRank: 2, noticeTitle: "info 1", noticeText: "notice 1", unreadFlag: true), NoticeModel(recordId: "a2", grdRecordId: "b2", eventRank: 2, noticeTitle: "info 2", noticeText: "notice 2", unreadFlag: false), NoticeModel(recordId: "a3", grdRecordId: "b3", eventRank: 1, noticeTitle: "info 3 {\(c)}", noticeText: "notice logout {INITIALIZE}", unreadFlag: true), NoticeModel(recordId: "a4", grdRecordId: "b4", eventRank: 1, noticeTitle: "info 4 {\(c)}", noticeText: "notice restart ", unreadFlag: true)]
+                let r: [Notice] = [Notice(recordId: "a1", grdRecordId: "b1", eventRank: 2, noticeTitle: "info 1", noticeText: "notice 1", unreadFlag: true), Notice(recordId: "a2", grdRecordId: "b2", eventRank: 2, noticeTitle: "info 2", noticeText: "notice 2", unreadFlag: false), Notice(recordId: "a3", grdRecordId: "b3", eventRank: 1, noticeTitle: "info 3 {\(c)}", noticeText: "notice logout {INITIALIZE}", unreadFlag: true), Notice(recordId: "a4", grdRecordId: "b4", eventRank: 1, noticeTitle: "info 4 {\(c)}", noticeText: "notice restart ", unreadFlag: true)]
                 let n: NoticeResult = NoticeResult(notices: r, clientInfo: nil)
                 self.save(endpoint: endpoint, data: n)
                 return n as! R

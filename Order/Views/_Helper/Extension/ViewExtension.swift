@@ -21,7 +21,7 @@ extension View {
         self.overlay(alignment: .bottom, content: {
             if isPresented.wrappedValue {
                 content()
-                .transition(.move(edge: .bottom))
+//                .transition(.move(edge: .bottom))
             } else {
                 EmptyView()
             }

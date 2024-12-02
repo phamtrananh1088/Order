@@ -66,7 +66,7 @@ struct LoginView: View {
                     }
                     .alert("", isPresented: $prelogin, actions: {
                         Button("yes") {
-                            loginVm.login(prelogin: pre)
+                            loginVm.login(prelogin: pre, loginOK: login)
                         }
                         Button(role: .cancel, action: {
                             loginVm.loginState = nil
@@ -78,7 +78,7 @@ struct LoginView: View {
                     })
                 } else {
                     Color.cyan.opacity(0.01).onAppear {
-                        loginVm.login(prelogin: pre)
+                        loginVm.login(prelogin: pre, loginOK: login)
                     }
                 }
             } else if case .err(let err) = state {
@@ -99,8 +99,8 @@ struct LoginView: View {
                     isShowConfirm2 = true
                     errorMessage = ("", "login_disabled")
                 }
-            } else if case .ok(let OK) = state {
-               let _ = loginOk(OK)
+            } else if case .ok(_) = state {
+                
             }
             
             Color.cyan
@@ -131,13 +131,13 @@ struct LoginView: View {
                         if loading {
                             LightingProgressView()
                         } else {
-                            HeadButtonView(text: "Login") {
+                            Button(action: {
                                 let validate = !(loginVm.companyCd.isEmpty || loginVm.userId.isEmpty || loginVm.password.isEmpty)
                                 isValidate = true
                                 if validate {
                                     loginVm.preLogin(companyCd: loginVm.companyCd, userId: loginVm.userId, password: loginVm.password)
                                 }
-                            }
+                            }, label: {Text("Login").modifier(HeadButtonModifier())})
                         }
                     }
                     .frame(height: 50)

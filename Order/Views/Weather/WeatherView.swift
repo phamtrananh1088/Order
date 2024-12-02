@@ -19,6 +19,10 @@ struct WeatherView: View {
                 Color.cyan
                 VStack {
                     Spacer()
+                        .frame(height: 80)
+                    Text(String(stringLiteral: System.currentDateDayInWeek2()))
+                        .font(.title2)
+                        .foregroundStyle(.white)
                     Spacer()
                     Text("weather today")
                         .font(.body)
@@ -35,19 +39,21 @@ struct WeatherView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 36, height: 36)
-                                    .padding()
+                                    .padding(10)
                                     .background(Color.white)
                                     .clipShape(Circle())
                                 
                                 Image(systemName: !isShowListWeather ? "chevron.down" : "chevron.up")
                                     .font(.body)
-                                    .foregroundStyle(.white)
+//                                    .foregroundStyle(.white)
                             }
                         })
+                        .buttonStyle(ClearButtonStyle())
                    
                     Spacer()
-                    HeadButtonView(text: buttonText, action: buttonClick)
-                      
+                    Button(action: buttonClick, label: {
+                        Text(buttonText).modifier(HeadButtonModifier())
+                    })
                     Spacer().frame(height: 60)
                 }
             }
@@ -66,6 +72,7 @@ struct WeatherView: View {
 private struct WeatherMenuView: View {
     @Binding var isPresented: Bool
     @Binding var listWeather: [WeatherModel]
+
     var click: (Int) -> Void
     let columns = [GridItem(.flexible()),
                    GridItem(.flexible()),
@@ -92,5 +99,6 @@ private struct WeatherMenuView: View {
                 })
             }
         })
+        .background(Color.white)
     }
 }

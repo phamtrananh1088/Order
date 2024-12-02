@@ -83,6 +83,8 @@ class Current {
     }
     
     func logout(removeHome: Bool = false) {
+        NotificationService.shared.clearPendingNotifications()
+        NotificationService.shared.clearDeliveredNotifications()
         let old = user
         setUser(nil)
         if let old = old {

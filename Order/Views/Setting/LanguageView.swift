@@ -42,7 +42,7 @@ struct LanguageView: View {
         }
         .sheet(isPresented: $isPresentedLanguageSheet, content: {
             LanguageChooseView(isPresented: $isPresentedLanguageSheet, currentLanguage: $languageVm.language, languageChooseVm: LanguageChooseViewModel() )
-                .environmentObject(contentModel)
+//                .environmentObject(contentModel)
         })
     }
 }

@@ -24,12 +24,12 @@ struct NoticeListWithConfirm2: View {
                     case .Logout:
                         Current.shared.logout()
                         withAnimation {
-                            contentModel.screenName = .loginView
+                            contentModel.reset()
                         }
                     case .Restart:
                         Current.shared.restart()
                         withAnimation {
-                            contentModel.screenName = .contentView
+                            contentModel.reset()
                         }
                     case .None:
                         break
@@ -40,7 +40,7 @@ struct NoticeListWithConfirm2: View {
     }
 }
 private struct NoticeListWithConfirmView: View {
-    @Binding var list: [NoticeModel]
+    @Binding var list: ResultAPI<[NoticeModel]>
     var buttonClick: () -> Void
     var noticeClick: (NoticeModel) -> Void
     @State private var showConfirm: Bool = false
@@ -65,51 +65,54 @@ private struct NoticeListWithConfirmView: View {
     }
 }
 private struct NoticeListView: View {
-    @Binding var list: [NoticeModel]
+    @Binding var list: ResultAPI<[NoticeModel]>
     var buttonClick: () -> Void
     var noticeClick: (NoticeModel) -> Void
     var body: some View {
         ZStack {
             Color.cyan
-            if list.isEmpty {
-                ZStack {
-                    Text("no_data_placeholder")
-                        .font(.body)
-                        .foregroundStyle(.white)
-                    VStack() {
-                        Spacer()
-                        Footer(action: buttonClick)
-                        Spacer().frame(height: 80)
-                    }
-                }
-            } else {
-                VStack {
-                    ScrollView {
-                        VStack {
+            if case .Loading = list {
+                LightingProgressView()
+            } else if let list = list.getOrNull() {
+                if list.isEmpty {
+                    ZStack {
+                        Text("no_data_placeholder")
+                            .font(.body)
+                            .foregroundStyle(.white)
+                        VStack() {
                             Spacer()
-                                .frame(height: 90)
-                            VStack(spacing: 6) {
-                                ForEach(list) { notice in
-                                    CardView {
-                                        NoticeItem(notice: notice)
-                                    }
-                                    .onTapGesture {
-                                        if notice.useCase.clickable() {
-                                            withAnimation {
-                                                noticeClick(notice)
+                            Footer(action: buttonClick)
+                            Spacer().frame(height: 80)
+                        }
+                    }
+                } else {
+                    VStack {
+                        ScrollView {
+                            VStack {
+                                Spacer()
+                                    .frame(height: 90)
+                                VStack(spacing: 6) {
+                                    ForEach(list) { notice in
+                                        CardView {
+                                            NoticeItem(notice: notice)
+                                        }
+                                        .onTapGesture {
+                                            if notice.useCase.clickable() {
+                                                withAnimation {
+                                                    noticeClick(notice)
+                                                }
                                             }
                                         }
                                     }
                                 }
                             }
                         }
+                        Spacer()
+                        Footer(action: buttonClick)
+                        Spacer().frame(height: 80)
                     }
-                    Spacer()
-                    Footer(action: buttonClick)
-                    Spacer().frame(height: 80)
                 }
             }
-            
         }
     }
 }
@@ -117,7 +120,10 @@ private struct NoticeListView: View {
 private struct Footer: View {
     var action: () -> Void
     var body: some View {
-        HeadButtonView(text: "notice_mark_read", action: action)
+        Button(action: action, label: {
+            Text("notice_mark_read")
+                .modifier(HeadButtonModifier())
+        })
     }
 }
 

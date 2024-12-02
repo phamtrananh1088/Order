@@ -108,7 +108,7 @@ struct GeneralSettingView: View {
             } else if case .languageView = model.screenName {
                 LanguageView(languageVm: LanguageViewModel())
                     .environmentObject(model)
-                    .environmentObject(contentModel)
+//                    .environmentObject(contentModel)
                     .transition(.move(edge: .trailing))
             }
         }

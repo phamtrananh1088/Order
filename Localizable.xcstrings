@@ -150,6 +150,9 @@
         }
       }
     },
+    "Dashboard" : {
+
+    },
     "english" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -261,6 +264,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "内部サーバーエラー"
+          }
+        }
+      }
+    },
+    "invalid_account_alert_msg" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "You have been logged out. Please log in again."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ログアウトしました。もう一度ログインしてください。"
           }
         }
       }
@@ -468,23 +488,6 @@
         }
       }
     },
-    "NEW" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "dsd"
-          }
-        },
-        "ja" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "sdas"
-          }
-        }
-      }
-    },
     "no" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -576,7 +579,6 @@
       }
     },
     "ok" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

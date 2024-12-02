@@ -11,7 +11,7 @@ import Combine
 class NoticeListViewModel: ObservableObject {
     let noticeRepo: NoticeRepository
     private var cancelables = Set<AnyCancellable>()
-    @Published var noticeList: [NoticeModel] = []
+    @Published var noticeList: ResultAPI<[NoticeModel]> = .Loading
     
     init() {
         noticeRepo = NoticeRepository()
@@ -31,7 +31,7 @@ class NoticeListViewModel: ObservableObject {
         }
         .receive(on: DispatchQueue.main)
         .sink(receiveCompletion: {_ in}, receiveValue: {data in
-            self.noticeList = data
+            self.noticeList = ResultAPI.Value(data)
         })
         .store(in: &cancelables)
     }

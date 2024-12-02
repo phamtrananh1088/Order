@@ -13,6 +13,7 @@
 		BD1B8A342CEF84960065A934 /* BuildVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1B8A332CEF84960065A934 /* BuildVersion.swift */; };
 		BD1B8A362CEF88A60065A934 /* BuildVersionDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1B8A352CEF88A60065A934 /* BuildVersionDao.swift */; };
 		BD1B8A392CEF8C000065A934 /* BuildVersionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1B8A382CEF8C000065A934 /* BuildVersionRepository.swift */; };
+		BD2168F32CF480890007AC5A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2168F22CF480890007AC5A /* ButtonStyle.swift */; };
 		BD2D3D162CF3631E00B8E6C1 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D3D152CF3631E00B8E6C1 /* WeatherViewModel.swift */; };
 		BD2D3D182CF3637900B8E6C1 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2D3D172CF3637900B8E6C1 /* WeatherModel.swift */; };
 		BD4D94D62CF181B6004ABCBD /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4D94D52CF181B6004ABCBD /* ContentViewModel.swift */; };
@@ -27,6 +28,8 @@
 		BD748DD22CF1AA1300135CE4 /* LanguageChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD748DD12CF1AA1300135CE4 /* LanguageChooseView.swift */; };
 		BD748DD42CF1E8AA00135CE4 /* LanguageChooseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD748DD32CF1E8AA00135CE4 /* LanguageChooseViewModel.swift */; };
 		BD748DD72CF1E96F00135CE4 /* LanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD748DD62CF1E96F00135CE4 /* LanguageModel.swift */; };
+		BD88709E2CF4B1D700A0281A /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD88709D2CF4B1D700A0281A /* NotificationService.swift */; };
+		BD8870A12CF4DA0A00A0281A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8870A02CF4DA0A00A0281A /* AppDelegate.swift */; };
 		BD9B1FAE2CF463E9003682FA /* DefaultBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B1FAD2CF463E9003682FA /* DefaultBottomSheet.swift */; };
 		BD9BCA542CF225B40059B26E /* NavigateBackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BCA532CF225B40059B26E /* NavigateBackView.swift */; };
 		BDA5661E2CDA35EA000F48E3 /* OrderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA5661D2CDA35EA000F48E3 /* OrderApp.swift */; };
@@ -95,6 +98,7 @@
 		BDA566EB2CEF2A06000F48E3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA566EA2CEF2A06000F48E3 /* HomeView.swift */; };
 		BDA566EF2CEF2DDE000F48E3 /* AppNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA566EE2CEF2DDE000F48E3 /* AppNameView.swift */; };
 		BDA566F12CEF2E58000F48E3 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA566F02CEF2E58000F48E3 /* HomeMenuView.swift */; };
+		BDC335662CFCA9630090F578 /* BottomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC335652CFCA9630090F578 /* BottomTabView.swift */; };
 		BDD112CA2CF1995F00DE5D0D /* GeneralSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD112C92CF1995F00DE5D0D /* GeneralSettingView.swift */; };
 		BDD112CC2CF199F100DE5D0D /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDD112CB2CF199F100DE5D0D /* GroupView.swift */; };
 		BDF1E7C02CF2165700391595 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF1E7BF2CF2165700391595 /* WeatherView.swift */; };
@@ -125,6 +129,7 @@
 		BD1B8A332CEF84960065A934 /* BuildVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildVersion.swift; sourceTree = "<group>"; };
 		BD1B8A352CEF88A60065A934 /* BuildVersionDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildVersionDao.swift; sourceTree = "<group>"; };
 		BD1B8A382CEF8C000065A934 /* BuildVersionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildVersionRepository.swift; sourceTree = "<group>"; };
+		BD2168F22CF480890007AC5A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		BD2D3D152CF3631E00B8E6C1 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		BD2D3D172CF3637900B8E6C1 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		BD4D94D52CF181B6004ABCBD /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
@@ -139,6 +144,9 @@
 		BD748DD12CF1AA1300135CE4 /* LanguageChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageChooseView.swift; sourceTree = "<group>"; };
 		BD748DD32CF1E8AA00135CE4 /* LanguageChooseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageChooseViewModel.swift; sourceTree = "<group>"; };
 		BD748DD62CF1E96F00135CE4 /* LanguageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageModel.swift; sourceTree = "<group>"; };
+		BD88709D2CF4B1D700A0281A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		BD8870A02CF4DA0A00A0281A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD9594562CF5E92200A72B87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BD9B1FAD2CF463E9003682FA /* DefaultBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBottomSheet.swift; sourceTree = "<group>"; };
 		BD9BCA532CF225B40059B26E /* NavigateBackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateBackView.swift; sourceTree = "<group>"; };
 		BDA5661A2CDA35EA000F48E3 /* Order.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Order.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +215,7 @@
 		BDA566EA2CEF2A06000F48E3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		BDA566EE2CEF2DDE000F48E3 /* AppNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNameView.swift; sourceTree = "<group>"; };
 		BDA566F02CEF2E58000F48E3 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
+		BDC335652CFCA9630090F578 /* BottomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTabView.swift; sourceTree = "<group>"; };
 		BDD112C92CF1995F00DE5D0D /* GeneralSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingView.swift; sourceTree = "<group>"; };
 		BDD112CB2CF199F100DE5D0D /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		BDF1E7BF2CF2165700391595 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
@@ -343,6 +352,23 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		BD88709C2CF4AF2B00A0281A /* Device Usage */ = {
+			isa = PBXGroup;
+			children = (
+				BD88709D2CF4B1D700A0281A /* NotificationService.swift */,
+			);
+			path = "Device Usage";
+			sourceTree = "<group>";
+		};
+		BD88709F2CF4D9E600A0281A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BDA5661D2CDA35EA000F48E3 /* OrderApp.swift */,
+				BD8870A02CF4DA0A00A0281A /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		BDA566112CDA35EA000F48E3 = {
 			isa = PBXGroup;
 			children = (
@@ -367,6 +393,7 @@
 		BDA5661C2CDA35EA000F48E3 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				BD9594562CF5E92200A72B87 /* Info.plist */,
 				BDA566632CDBCF09000F48E3 /* Views */,
 				BDA566642CDBCFC2000F48E3 /* ViewModels */,
 				BDA566A12CE5F8B5000F48E3 /* Repositories */,
@@ -468,6 +495,7 @@
 		BDA566622CDBCECA000F48E3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BD88709C2CF4AF2B00A0281A /* Device Usage */,
 				BDA566872CE21BC0000F48E3 /* Util */,
 				BDA5667C2CE1FAFD000F48E3 /* Sync */,
 				BDA5666A2CDC6943000F48E3 /* User */,
@@ -674,6 +702,7 @@
 				BDF1E7C12CF21D0D00391595 /* TopBarView.swift */,
 				BD9BCA532CF225B40059B26E /* NavigateBackView.swift */,
 				BD9B1FAD2CF463E9003682FA /* DefaultBottomSheet.swift */,
+				BDC335652CFCA9630090F578 /* BottomTabView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -690,6 +719,7 @@
 		BDA566B82CEC68A5000F48E3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				BD88709F2CF4D9E600A0281A /* App */,
 				BDA566BE2CEC9EA0000F48E3 /* Login */,
 				BDA5661D2CDA35EA000F48E3 /* OrderApp.swift */,
 				BDA5661F2CDA35EA000F48E3 /* ContentView.swift */,
@@ -703,6 +733,7 @@
 			children = (
 				BDA566BC2CEC7B62000F48E3 /* ColorExtension.swift */,
 				BD65D22A2CF07B020018D4A9 /* ViewExtension.swift */,
+				BD2168F22CF480890007AC5A /* ButtonStyle.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -979,7 +1010,9 @@
 				BD6C00492CEFB3DA0077DEC9 /* MockBaseApi.swift in Sources */,
 				BDA5661E2CDA35EA000F48E3 /* OrderApp.swift in Sources */,
 				BDA566862CE214FF000F48E3 /* Master.swift in Sources */,
+				BD88709E2CF4B1D700A0281A /* NotificationService.swift in Sources */,
 				BD1B8A342CEF84960065A934 /* BuildVersion.swift in Sources */,
+				BDC335662CFCA9630090F578 /* BottomTabView.swift in Sources */,
 				BDA566602CDBBF9A000F48E3 /* BinDetail.swift in Sources */,
 				BDA566B42CE7BF29000F48E3 /* CircleProgressView.swift in Sources */,
 				BDA5667B2CE1FA53000F48E3 /* UserWithToken.swift in Sources */,
@@ -1005,9 +1038,11 @@
 				BDA5666C2CDC6968000F48E3 /* UserInfo.swift in Sources */,
 				BDA566EF2CEF2DDE000F48E3 /* AppNameView.swift in Sources */,
 				BDA566892CE21BF5000F48E3 /* Config.swift in Sources */,
+				BD2168F32CF480890007AC5A /* ButtonStyle.swift in Sources */,
 				BDA566562CDB2189000F48E3 /* SyncRecord.swift in Sources */,
 				BD1B8A392CEF8C000065A934 /* BuildVersionRepository.swift in Sources */,
 				BDA566E62CEEDDD5000F48E3 /* System.swift in Sources */,
+				BD8870A12CF4DA0A00A0281A /* AppDelegate.swift in Sources */,
 				BDA5668D2CE33AE4000F48E3 /* LoginResponse.swift in Sources */,
 				BDA566C42CED9459000F48E3 /* StateResult.swift in Sources */,
 				BD1B8A362CEF88A60065A934 /* BuildVersionDao.swift in Sources */,
@@ -1186,6 +1221,9 @@
 				DEVELOPMENT_TEAM = B3T96W8UFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Order/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1215,6 +1253,9 @@
 				DEVELOPMENT_TEAM = B3T96W8UFG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Order/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,7 +10,7 @@ import SwiftUI
 struct DefaultBottomSheet<Content: View>: View {
     @Binding var isPresented: Bool
     @ViewBuilder var content: () -> Content
-    @State private var alpha: CGFloat = 0
+    @State private var alpha: CGFloat = 0.1
    
     var body: some View {
         ZStack {
@@ -23,16 +23,21 @@ struct DefaultBottomSheet<Content: View>: View {
             
             VStack {
                 Spacer()
-                
-                content()
-                .padding()
-                .background(Color.white)
+                if isPresented {
+                    content()
+                        .padding()
+                        .background(Color.white)
+                        .transition(.move(edge: .bottom))
+                }
             }
         }
         .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: {
-                alpha = 0.1
-            })
+//            withAnimation(.default.delay(0.1)) {
+//                alpha = 0.1
+//            }
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6, execute: {
+//                alpha = 0.1
+//            })
         }
     }
 }

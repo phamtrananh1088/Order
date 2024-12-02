@@ -10,7 +10,8 @@ import EnjoyMacro
 
 struct ContentView: View {
 //    @ObservedObject var current: Current = Current.shared
-    @StateObject private var contentModel: ContentViewModel = ContentViewModel()
+//    @StateObject private var contentModel: ContentViewModel = ContentViewModel()
+    @EnvironmentObject var contentModel: ContentViewModel
     @Binding var isShowSplashScreen: Bool
     init(isShowSplashScreen: Binding<Bool>) {
         self._isShowSplashScreen = isShowSplashScreen
@@ -55,6 +56,16 @@ struct ContentView: View {
             }
         }
         .ignoresSafeArea()
+        .alert("", isPresented: $contentModel.isLogouted, actions: {
+            Button("ok", action: {
+                Current.shared.logout()
+                withAnimation {
+                    contentModel.reset()
+                }
+            })
+        }, message: {
+            Text("invalid_account_alert_msg")
+        })
     }
     
     private func start() -> Void {

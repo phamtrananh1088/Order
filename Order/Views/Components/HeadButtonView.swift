@@ -22,3 +22,14 @@ struct HeadButtonView: View {
         })
     }
 }
+
+struct HeadButtonModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(.cyan)
+            .font(.system(.subheadline))
+            .padding(EdgeInsets(top: 12, leading: 32, bottom: 12, trailing: 32))
+            .background(Color.white)
+            .clipShape(Capsule())
+    }
+}

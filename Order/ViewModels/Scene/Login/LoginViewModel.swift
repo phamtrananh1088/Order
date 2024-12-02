@@ -35,7 +35,7 @@ class LoginViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
-    func login(prelogin: LoginState.PreLogin) -> Void {
+    func login(prelogin: LoginState.PreLogin, loginOK: @escaping (LoginState.Ok) -> Void) -> Void {
         let request = LoginRequest(userId: prelogin.request.userId, companyCd: prelogin.request.companyCd, password: prelogin.request.password, clientInfo: Config.clientInfo)
         self.loginState = LoginState.loading
         userRepository.login(loginRequest: request)
@@ -46,6 +46,9 @@ class LoginViewModel: ObservableObject {
                 }
             }, receiveValue: { data in
                 self.loginState = data
+                if case .ok(let ok) = data {
+                    loginOK(ok)
+                }
             })
             .store(in: &cancellables)
     }

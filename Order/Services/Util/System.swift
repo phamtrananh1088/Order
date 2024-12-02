@@ -22,6 +22,22 @@ struct System {
     static func currentDateDayInWeek2() -> String {
         return format(date: Date(), dateformat: DateFormat.dayOfWeek2.rawValue)
     }
+    static func getCaldendar() -> Calendar {
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: "ja_JP")
+        return calendar
+    }
+    static func getCurrentTime() -> (year: Int, month: Int, day: Int, hour: Int, minute: Int, second: Int) {
+        var calendar = Calendar.current
+        calendar.locale = Locale(identifier: "ja_JP")
+        let date = Date()
+        return (calendar.component(.year, from: date),
+                calendar.component(.month, from: date),
+                calendar.component(.day, from: date),
+                calendar.component(.hour, from: date),
+                calendar.component(.minute, from: date),
+                calendar.component(.second, from: date))
+    }
     
     private static func format(date: Date, dateformat: String) -> String {
         let dateFormatter = DateFormatter()

@@ -21,40 +21,42 @@ struct LoginPhaseView: View {
             })
             .transition(.move(edge: .leading))
         } else if 1 == loggedInState {
-            let _ = noticelistVm.noticeList(rank: NoticeRank.Important_Notice.rawValue, unreadOnly: true)
-            if noticelistVm.noticeList.isEmpty {
-                WeatherView(weatherVm: WeatherViewModel(), buttonText: "go_to_home_dashboard", buttonClick: {
-                    withAnimation {
-                        contentModel.screenName = .homeView
-                    }
-                })
-                .transition(.move(edge: .leading))
+            if case .Loading = noticelistVm.noticeList {
+                ZStack {
+                    Color.cyan
+                    LightingProgressView()
+                }
             } else {
-                NoticeListWithConfirm2(noticelistVm: noticelistVm, buttonClick: {
-                    DispatchQueue.main.async {
-                        loggedInState = 2
+                if let n = noticelistVm.noticeList.getOrNull() {
+                    if n.isEmpty {
+                        WeatherView(weatherVm: WeatherViewModel(), buttonText: "go_to_home_dashboard", buttonClick: {
+                            withAnimation {
+                                contentModel.screenName = .homeView
+                            }
+                        })
+                        .transition(.move(edge: .leading))
+                    } else {
+                        NoticeListWithConfirm2(noticelistVm: noticelistVm, buttonClick: {
+                            DispatchQueue.main.async {
+                                loggedInState = 2
+                            }
+                        })
+                        .transition(.move(edge: .leading))
                     }
-                })
-                .environmentObject(contentModel)
-                .transition(.move(edge: .leading))
-            }
-        } else {
-            let loginVm = LoginViewModel(defaultCompantCd: Config.pref.lastUserCompany ?? "")
-            if loadNotice {
-                let _ = syncNotice()
-            }
-            LoginView(loginVm: loginVm) { u in
-                Current.shared.login(login: u.user, json: u.json)
-                DispatchQueue.main.async {
-                    loadNotice = true
                 }
             }
-        }
-    }
-    
-    private func syncNotice() {
-        SyncData().syncNotice {
-            loggedInState = 1
+        } else {
+            LoginView(loginVm: LoginViewModel(defaultCompantCd: Config.pref.lastUserCompany ?? "")) { u in
+                Current.shared.login(login: u.user, json: u.json)
+                SyncData().syncNotice(callback: {
+                    DispatchQueue.main.async(execute: {
+                        withAnimation {
+                            loggedInState = 1
+                        }
+                        noticelistVm.noticeList(rank: NoticeRank.Important_Notice.rawValue, unreadOnly: true)
+                    })
+                })
+            }
         }
     }
 }

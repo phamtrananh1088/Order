@@ -72,7 +72,9 @@ struct LanguageChooseView: View {
                             Button(action: {
                                 Config.pref.setLanguage(languageCode: language)
                                 Current.shared.restart()
-                                contentModel.screenName = .contentView
+                                withAnimation {
+                                    contentModel.reset()
+                                }
                             }, label: {
                                 Text("yes")
                             })
